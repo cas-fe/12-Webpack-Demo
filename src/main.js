@@ -1,13 +1,8 @@
-class Test {
-  constructor() {
-    this.foo = 'bar';
-  }
-}
+import Greeting from './greeting.js';
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  const instance = new Test();
+document.addEventListener('DOMContentLoaded', async () => {
+  const instance = new Greeting('Thomas');
+  const greeting = await instance.get();
 
-  console.log(instance.foo);
+  document.body.innerHTML += greeting;
 });
-
-export default Test;
