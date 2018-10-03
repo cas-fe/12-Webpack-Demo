@@ -1,13 +1,15 @@
+import uniqueId from 'lodash.uniqueid';
+
 class Test {
   constructor() {
-    this.foo = 'bar';
+    this.uuid = uniqueId();
   }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
   const instance = new Test();
 
-  console.log(instance.foo);
+  console.log(instance.uuid);
 });
 
 export default Test;
