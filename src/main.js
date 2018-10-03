@@ -1,15 +1,8 @@
-import uniqueId from 'lodash.uniqueid';
+import Greeting from './greeting.js';
 
-class Test {
-  constructor() {
-    this.uuid = uniqueId();
-  }
-}
+document.addEventListener('DOMContentLoaded', async () => {
+  const instance = new Greeting('Thomas');
+  const greeting = await instance.get();
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  const instance = new Test();
-
-  console.log(instance.uuid);
+  document.body.innerHTML += greeting;
 });
-
-export default Test;
